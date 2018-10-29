@@ -20,6 +20,8 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.4.2"
+        "@fortawesome/fontawesome-free": "^5.4.2",
+        "magnific-popup": "^1.1.0",
+        "owl.carousel": "^2.3.4"
     }
 }
