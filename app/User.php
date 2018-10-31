@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\UsersImage');
     }
+
+    public function positons()
+    {
+        return $this->belongsTo('App\Position');
+    }
 }
