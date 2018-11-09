@@ -26,6 +26,12 @@ class DatabaseSeeder extends Seeder
         $this->call(TextsSeeder::class);
         $this->call(TagsSeeder::class);
         $this->call(CategoriesSeeder::class);
+        $this->call(ServicesSeeder::class);
         $this->call(RolesUsersSeeder::class);
+        $this->call(ArticlesImagesSeeder::class);
+        $this->call(ArticlesSeeder::class);
+        $this->call(ArticlesCategoriesSeeder::class);
+        $this->call(ArticlesTagsSeeder::class);
+        $this->call(CommentsSeeder::class);
     }
 }

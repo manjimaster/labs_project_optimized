@@ -39,13 +39,18 @@ class User extends Authenticatable
         return $this->belongsTo('App\UsersImage');
     }
 
-    public function positons()
+    public function positions()
     {
-        return $this->belongsTo('App\Position');
+        return $this->belongsTo('App\Position', 'positions_id');
     }
 
     public function comments()
     {
         return $this->hasMany('App\Comment');
+    }
+
+    public function articles()
+    {
+        return $this->hasMany('App\Article');
     }
 }

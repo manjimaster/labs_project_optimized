@@ -17,6 +17,7 @@ class CreateLinksTable extends Migration
             $table->increments('id');
             $table->text('content');
             $table->string('uses');
+            $table->text('comments');
             $table->timestamps();
         });
     }

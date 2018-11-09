@@ -8,6 +8,6 @@ class Testimonial extends Model
 {
     public function testimonial_images()
     {
-        return $this->belongsTo('App\TestimonialImage');
+        return $this->belongsTo('App\TestimonialImage', 'testimonial_images_id');
     }
 }

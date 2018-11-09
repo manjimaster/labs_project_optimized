@@ -25,10 +25,10 @@ class TestimonialImagesSeeder extends Seeder
                 'image_url_1' => 'testimonial_4_profile_image.jpg'
             ],
             [
-                'image_url_1' => 'testimonial_4_profile_image.jpg'
+                'image_url_1' => 'testimonial_5_profile_image.jpg'
             ],
             [
-                'image_url_1' => 'testimonial_4_profile_image.jpg'
+                'image_url_1' => 'testimonial_6_profile_image.jpg'
             ],
         ]);
     }

@@ -11,32 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index')->name('index');
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin-master', 'HomeController@index')->name('home');
 
 
-Route::get('/index', function () {
-    return view('index');
-})->name('index');
+Route::get('/index', 'IndexController@index')->name('index');
 
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
+Route::get('/services', 'ServiceController@index')->name('services');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/blog', 'BlogController@Index')->name('blog');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contact', 'ContactController@index')->name('contact');
 
-Route::get('/blogPost', function () {
-    return view('blogPost');
-})->name('blogPost');
+Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');

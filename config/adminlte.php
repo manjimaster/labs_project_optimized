@@ -108,80 +108,121 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'ADMIN PART',
         [
             'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'url'  => 'admin-master/blog',
+            'can'  => 'manage-blog', //middleware !
         ],
         [
             'text'        => 'Pages',
-            'url'         => 'admin/pages',
+            'url'         => 'admin-master/pages',
             'icon'        => 'file',
             'label'       => 4,
             'label_color' => 'success',
         ],
+        [
+            'text'       => 'Important',
+            'icon' => 'circle-notch',
+            'icon_color' => 'red',
+        ],
+        [
+            'text'       => 'Warning',
+            'icon'       => 'circle-notch',
+            'icon_color' => 'yellow',
+        ],
+        [
+            'text'       => 'Information',
+            'icon'       => 'circle-notch',
+            'icon_color' => 'aqua',
+        ],
+        [
+            'text' => 'Logo',
+            'url' => '/admin-master/logo',
+            'icon' => 'puzzle-piece',
+        ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
-            'url'  => 'admin/settings',
+            'url'  => 'admin-master/profile',
             'icon' => 'user',
         ],
+        // [
+        //     'text' => 'Change Password',
+        //     'url'  => 'admin-master/settings',
+        //     'icon' => 'lock',
+        // ],
+        'PAGES',
         [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
+            'text' => 'See the site',
+            'url' => '/',
+            'icon' => 'file-alt',
         ],
         [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
+            'text' => 'Home page',
+            'icon' => 'home',
             'submenu' => [
                 [
                     'text' => 'Level One',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Level One',
-                    'url'     => '#',
+                    'url' => 'admin-master/',
                     'submenu' => [
                         [
                             'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
+                            'url' => 'admin-master/',
                             'submenu' => [
                                 [
                                     'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
+                                    'url' => 'admin-master/',
                                 ],
                             ],
                         ],
                     ],
                 ],
+            ],
+        ],
+        [
+            'text' => 'Services page',
+            'icon' => 'concierge-bell',
+            'submenu' => [
                 [
                     'text' => 'Level One',
-                    'url'  => '#',
+                    'url' => 'admin-master/',
+                    'submenu' => [
+                        [
+                            'text' => 'Level Two',
+                            'url' => 'admin-master/',
+                            'submenu' => [
+                                [
+                                    'text' => 'Level Three',
+                                    'url' => 'admin-master/',
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
-        'LABELS',
         [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
+            'text' => 'Blog page',
+            'icon' => 'newspaper',
+            'submenu' => [
+                [
+                    'text' => 'Level One',
+                    'url' => 'admin-master/',
+                    'submenu' => [
+                        [
+                            'text' => 'Level Two',
+                            'url' => 'admin-master/',
+                            'submenu' => [
+                                [
+                                    'text' => 'Level Three',
+                                    'url' => 'admin-master/',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 

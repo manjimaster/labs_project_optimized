@@ -19,6 +19,11 @@
 				<li class="{{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}">
 					<a href="{{route('contact')}}">Contact</a>
 				</li>
+				@auth
+					<li>
+						<a class="bg-danger" href="{{route('home')}}">Admin</a>
+					</li>
+				@endauth
 			</ul>
 		</nav>
 	</header>

@@ -5,7 +5,7 @@
         <a href="{{ $item['href'] }}"
            @if (isset($item['target'])) target="{{ $item['target'] }}" @endif
         >
-            <i class="fa fa-fw fa-{{ isset($item['icon']) ? $item['icon'] : 'circle-o' }} {{ isset($item['icon_color']) ? 'text-' . $item['icon_color'] : '' }}"></i>
+            <i class="fas fa-fw fa-{{ isset($item['icon']) ? $item['icon'] : 'circle-o' }} {{ isset($item['icon_color']) ? 'text-' . $item['icon_color'] : '' }}"></i>
             <span>{{ $item['text'] }}</span>
             @if (isset($item['label']))
                 <span class="pull-right-container">
@@ -13,7 +13,7 @@
                 </span>
             @elseif (isset($item['submenu']))
                 <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
+                <i class="fas fa-angle-left pull-right"></i>
                 </span>
             @endif
         </a>

@@ -22,6 +22,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->unsignedInteger('team');
+            $table->unsignedInteger('permanentTeamMember')->default(0);
+            $table->string('biography');
         });
     }
 

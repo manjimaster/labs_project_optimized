@@ -11,7 +11,7 @@ class ServicesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('service')->insert([
+        DB::table('services')->insert([
             [
                 'name' => 'service1',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',

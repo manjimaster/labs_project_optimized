@@ -18,9 +18,6 @@ class CarouselImagesSeeder extends Seeder
             [
                 'image_url' => 'carousel_image_2.jpg'
             ],
-            [
-                'image_url' => 'carousel_image_3.jpg'
-            ],
         ]);
     }
 }

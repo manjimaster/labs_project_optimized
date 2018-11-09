@@ -5,7 +5,7 @@
 			<div class="page-info">
 				<h2>Blog</h2>
 				<div class="page-links">
-					<a href="#">Home</a>
+					<a href="{{route('index')}}">Home</a>
 					<span>Blog</span>
 				</div>
 			</div>
@@ -19,71 +19,50 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-sm-7 blog-posts">
+					@foreach ($articlesContent as $key => $article)
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="/storage/images/modified/blog/blog-2.jpg" alt="">
+							<img src="/storage/images/modified/blog/{{$article->article_images->image_url_1}}" alt="">
 							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
+								<h2>{{$article->created_at->format('d')}}</h2>
+								<h3>{{$article->created_at->format('M')}} {{$article->created_at->format('Y')}}</h3>
 							</div>
 						</div>
 						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
+							<h2 class="post-title">{{$article->title}}</h2>
 							<div class="post-meta">
-								<a href="">Loredana Papp</a>
-								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
+								{{-- {{$articleTags = $ArticleFullReferenced[$key]->tags}} --}}
+								@foreach ($ArticleFullReferenced[$key]->tags as $tag)
+									<a href="">{{$tag->name}}</a>
+								@endforeach
+								{{-- {{$ArticleFullReferenced[$key]->comments->count()}} --}}
+								<a href="">{{$ArticleFullReferenced[$key]->comments->where('validation', 1)->count()}} Comments</a>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
-							<a href="/blogPost" class="read-more">Read More</a>
+							<p>{{$article->preview_content}}</p>
+							<a href="/blogPost/{{$article->id}}" class="read-more">Read More</a>
 						</div>
 					</div>
-					<!-- Post item -->
-					<div class="post-item">
-						<div class="post-thumbnail">
-							<img src="/storage/images/modified/blog/blog-1.jpg" alt="">
-							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
-							</div>
-						</div>
-						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
-							<div class="post-meta">
-								<a href="">Loredana Papp</a>
-								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
-							<a href="/blogPost" class="read-more">Read More</a>
-						</div>
-					</div>
-					<!-- Post item -->
-					<div class="post-item">
-						<div class="post-thumbnail">
-							<img src="/storage/images/modified/blog/blog-3.jpg" alt="">
-							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
-							</div>
-						</div>
-						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
-							<div class="post-meta">
-								<a href="">Loredana Papp</a>
-								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
-							<a href="/blogPost" class="read-more">Read More</a>
-						</div>
-					</div>
+					@endforeach
 					<!-- Pagination -->
 					<div class="page-pagination">
-						<a class="active" href="">01.</a>
-						<a href="">02.</a>
-						<a href="">03.</a>
+						@if ($articlesContent->onFirstPage())
+						{{-- <p class="disabled"><a href="#">&laquo;</a></p> --}}
+						@else
+							<a class="btn btn-labsGreen text-labsPurple" href="/blog?page=1" rel="prev"  role="button">&laquo;</a>
+						@endif
+
+						@for ($i = 1; $i < $nbrArticlesPages+1; $i++)
+							@if ($articlesContent->currentPage() != $i)
+								<a class="btn btn-labsGreen text-labsPurple" href="/blog?page={{$i}}"  role="button">{{$i}}</a>
+							@endif
+						@endfor
+
+						@if ($articlesContent->hasMorePages())
+							<a class="btn btn-labsGreen text-labsPurple" href="/blog?page={{$articlesContent->lastPage()}}" rel="next"  role="button">&raquo;</a>
+						@else
+							{{-- <p class="disabled"><a href="#">&raquo;</a></p> --}}
+						@endif
 					</div>
 				</div>
 				<!-- Sidebar area -->
@@ -99,37 +78,27 @@
 					<div class="widget-item">
 						<h2 class="widget-title">Categories</h2>
 						<ul>
-							<li><a href="#">Vestibulum maximus</a></li>
-							<li><a href="#">Nisi eu lobortis pharetra</a></li>
-							<li><a href="#">Orci quam accumsan </a></li>
-							<li><a href="#">Auguen pharetra massa</a></li>
-							<li><a href="#">Tellus ut nulla</a></li>
-							<li><a href="#">Etiam egestas viverra </a></li>
+							@foreach ($categoriesContent as $category)
+								<li><a href="#">{{$category->name}}</a></li>
+							@endforeach
 						</ul>
 					</div>
 					<!-- Single widget -->
 					<div class="widget-item">
 						<h2 class="widget-title">Instagram</h2>
 						<ul class="instagram">
-							<li><img src="/storage/images/modified/instagram/1.jpg" alt=""></li>
-							<li><img src="/storage/images/modified/instagram/2.jpg" alt=""></li>
-							<li><img src="/storage/images/modified/instagram/3.jpg" alt=""></li>
-							<li><img src="/storage/images/modified/instagram/4.jpg" alt=""></li>
-							<li><img src="/storage/images/modified/instagram/5.jpg" alt=""></li>
-							<li><img src="/storage/images/modified/instagram/6.jpg" alt=""></li>
+							@foreach ($instagramContent as $instagram)
+								<li><img src="/storage/images/modified/instagram/{{$instagram->image_url}}" alt=""></li>
+							@endforeach
 						</ul>
 					</div>
 					<!-- Single widget -->
 					<div class="widget-item">
 						<h2 class="widget-title">Tags</h2>
 						<ul class="tag">
-							<li><a href="">branding</a></li>
-							<li><a href="">identity</a></li>
-							<li><a href="">video</a></li>
-							<li><a href="">design</a></li>
-							<li><a href="">inspiration</a></li>
-							<li><a href="">web design</a></li>
-							<li><a href="">photography</a></li>
+							@foreach ($tagsContent as $tag)
+								<li><a href="#">{{$tag->name}}</a></li>
+							@endforeach
 						</ul>
 					</div>
 					<!-- Single widget -->
@@ -137,7 +106,13 @@
 						<h2 class="widget-title">Quote</h2>
 						<div class="quote">
 							<span class="quotation">‘​‌‘​‌</span>
-							<p>Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique. Sed lacinia turpis at ultricies vestibulum.</p>
+							<p>
+								@foreach ($textsContent as $quote)
+									@if ($quote->uses == 'quote')
+										{{$quote->content}}
+									@endif
+								@endforeach
+							</p>
 						</div>
 					</div>
 					<!-- Single widget -->

@@ -8,7 +8,7 @@ class Article extends Model
 {
     public function article_images()
     {
-        return $this->belongsTo('App\ArticleImage');
+        return $this->belongsTo('App\ArticleImage', 'article_images_id');
     }
     public function comments()
     {
@@ -23,5 +23,10 @@ class Article extends Model
     public function categories()
     {
         return $this->belongsToMany('App\Categorie', 'articles_categories', 'article_id', 'categorie_id');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo('App\User', 'user_id');
     }
 }
