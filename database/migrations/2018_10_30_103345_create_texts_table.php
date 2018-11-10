@@ -15,7 +15,9 @@ class CreateTextsTable extends Migration
     {
         Schema::create('texts', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('content');
+            $table->text('content_p1');
+            $table->text('content_p2');
+            $table->text('content_p3');
             $table->string('uses');
             $table->text('comments');
             $table->timestamps();

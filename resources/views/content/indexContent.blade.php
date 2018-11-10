@@ -6,7 +6,7 @@
             <img src="/storage/images/modified/big-logo.png" alt="">
             @foreach ($textsContent as $text)
                 @if($text->uses=='1a')
-                    {!! $text->content !!}
+                    <p>{!! $text->content_p1 !!}</p>
                 @endif
             @endforeach
         </div>
@@ -51,24 +51,45 @@
             <div class="section-title">
                 <h2>
                     @foreach ($textsContent as $text)
-                        @if($text->uses=='1bp1')
-                            {!! $text->content !!}
+                        @if($text->uses=='1b1')
+                            {!! $text->content_p1 !!}
                         @endif
                     @endforeach
                     <span>
                     @foreach ($textsContent as $text)
-                        @if($text->uses=='1bsp')
-                            {!! $text->content !!}
+                        @if($text->uses=='1b1')
+                            {!! $text->content_p2 !!}
                         @endif
                     @endforeach
                     </span>
                     @foreach ($textsContent as $text)
-                        @if($text->uses=='1bp2')
-                            {!! $text->content !!}
+                        @if($text->uses=='1b1')
+                            {!! $text->content_p3 !!}
                         @endif
                     @endforeach
                 </h2>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        @foreach ($textsContent as $text)
+                            @if($text->uses=='1b2')
+                                {!! $text->content_p1 !!}
+                            @endif
+                        @endforeach
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        @foreach ($textsContent as $text)
+                            @if($text->uses=='1b2')
+                                {!! $text->content_p2 !!}
+                            @endif
+                        @endforeach
+                    </p>
+                </div>
+            </div>
+            
             <div class="text-center mt60">
                 <a href="{{route("blog")}}" class="site-btn">Browse</a>
             </div>
@@ -99,11 +120,13 @@
         <div class="row">
             <div class="col-md-8 offset-md-4">
                 <div class="section-title left">
+                    <h2>
                     @foreach ($textsContent as $text)
                     @if($text->uses=='1c')
-                    {!! $text->content !!}
+                    {!! $text->content_p1 !!}
                     @endif
                     @endforeach
+                    </h2>
                 </div>
                 <div class="owl-carousel" id="testimonial-slide">
                     @foreach ($testimonialsContent as $testimonial)
@@ -138,20 +161,20 @@
         <div class="section-title dark">
             <h2>
                 @foreach ($textsContent as $text)
-                    @if($text->uses=='1dp1')
-                        {!! $text->content !!}
+                    @if($text->uses=='1d')
+                        {!! $text->content_p1 !!}
                     @endif
                 @endforeach
                 <span>
                 @foreach ($textsContent as $text)
-                    @if($text->uses=='1dsp')
-                        {!! $text->content !!}
+                    @if($text->uses=='1d')
+                        {!! $text->content_p2 !!}
                     @endif
                 @endforeach
                 </span>
                 @foreach ($textsContent as $text)
-                    @if($text->uses=='1dp2')
-                        {!! $text->content !!}
+                    @if($text->uses=='1d')
+                        {!! $text->content_p3 !!}
                     @endif
                 @endforeach
             </h2>
@@ -224,20 +247,20 @@
         <div class="section-title">
             <h2>
                 @foreach ($textsContent as $text)
-                    @if($text->uses=='1ep1')
-                        {!! $text->content !!}
+                    @if($text->uses=='1e')
+                        {!! $text->content_p1 !!}
                     @endif
                 @endforeach
                 <span>
                 @foreach ($textsContent as $text)
-                    @if($text->uses=='1esp')
-                        {!! $text->content !!}
+                    @if($text->uses=='1e')
+                        {!! $text->content_p2 !!}
                     @endif
                 @endforeach
                 </span>
                 @foreach ($textsContent as $text)
-                    @if($text->uses=='1ep2')
-                        {!! $text->content !!}
+                    @if($text->uses=='1e')
+                        {!! $text->content_p3 !!}
                     @endif
                 @endforeach
             </h2>
@@ -274,7 +297,7 @@
             <div class="col-md-9">
                 @foreach ($textsContent as $text)
                     @if($text->uses=='1f')
-                        {!! $text->content !!}
+                        {!! $text->content_p1 !!}
                     @endif
                 @endforeach
             </div>

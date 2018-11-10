@@ -45,8 +45,16 @@ Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
 
     Route::post('/admin-master/carousel/create', 'AdminIndexController@carouselCreate')->name('createCarousel');
 
-    Route::get('/admin-master/carousel/edit{id}', 'AdminIndexController@carouselEdit')->name('editCarousel');
+    Route::get('/admin-master/carousel/edit/{id}', 'AdminIndexController@carouselEdit')->name('editCarousel');
 
-    Route::post('/admin-master/carousel/update{id}', 'AdminIndexController@carouselUpdate')->name('updateCarousel');
+    Route::post('/admin-master/carousel/update/{id}', 'AdminIndexController@carouselUpdate')->name('updateCarousel');
 
-    Route::get('/admin-master/carousel/delete{id}', 'AdminIndexController@carouselDelete')->name('deleteCarousel');
+    Route::get('/admin-master/carousel/delete/{id}', 'AdminIndexController@carouselDelete')->name('deleteCarousel');
+
+    // 3 services invitation - inv1
+
+    Route::get('/admin-master/inv1', 'AdminIndexController@inv1Show')->name('showInv1');
+
+    Route::get('/admin-master/inv1/edit/{id}', 'AdminIndexController@inv1Edit')->name('editInv1');
+
+    Route::post('/admin-master/inv1/update/{id}', 'AdminIndexController@inv1Update')->name('updateInv1');

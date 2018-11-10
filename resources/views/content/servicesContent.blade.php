@@ -20,20 +20,20 @@
 			<div class="section-title dark">
 				<h2>
 					@foreach ($textsContent as $text)
-						@if($text->uses=='1dp1')
-							{!! $text->content !!}
+						@if($text->uses=='1d')
+							{!! $text->content_p1 !!}
 						@endif
 					@endforeach
 					<span>
 					@foreach ($textsContent as $text)
-						@if($text->uses=='1dsp')
-							{!! $text->content !!}
+						@if($text->uses=='1d')
+							{!! $text->content_p2 !!}
 						@endif
 					@endforeach
 					</span>
 					@foreach ($textsContent as $text)
-						@if($text->uses=='1dp2')
-							{!! $text->content !!}
+						@if($text->uses=='1d')
+							{!! $text->content_p3 !!}
 						@endif
 					@endforeach
 				</h2>
@@ -106,20 +106,20 @@
 			<div class="section-title">
                 <h2>
                     @foreach ($textsContent as $text)
-                        @if($text->uses=='1bp1')
-                            {!! $text->content !!}
+                        @if($text->uses=='1b1')
+                            {!! $text->content_p1 !!}
                         @endif
                     @endforeach
                     <span>
                     @foreach ($textsContent as $text)
-                        @if($text->uses=='1bsp')
-                            {!! $text->content !!}
+                        @if($text->uses=='1b1')
+                            {!! $text->content_p2 !!}
                         @endif
                     @endforeach
                     </span>
                     @foreach ($textsContent as $text)
-                        @if($text->uses=='1bp2')
-                            {!! $text->content !!}
+                        @if($text->uses=='1b1')
+                            {!! $text->content_p3 !!}
                         @endif
                     @endforeach
                 </h2>
