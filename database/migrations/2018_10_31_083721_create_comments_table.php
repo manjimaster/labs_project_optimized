@@ -22,7 +22,7 @@ class CreateCommentsTable extends Migration
             $table->string('image')->nullable();
             $table->unsignedInteger('article_id')->references('id')->on('articles');
             $table->unsignedInteger('user_id')->references('id')->on('users')->nullable();
-            $table->unsignedInteger('validation');
+            $table->unsignedInteger('validation')->default(0);
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('name');
             $table->string('position');
             $table->text('content');
-            $table->integer('validation')->default(0);
+            $table->unsignedInteger('validation')->default(0);
             $table->timestamps();
         });
     }

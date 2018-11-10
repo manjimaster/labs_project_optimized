@@ -93,7 +93,7 @@
 
 		</div>
 		<div class="text-center">
-			<a href="" class="site-btn">Browse</a>
+			<a href="#3projects" class="site-btn">Browse</a>
 		</div>
 	</div>
 <!-- services section end -->
@@ -166,7 +166,7 @@
 				
 			</div>
 			<div class="text-center mt100">
-				<a href="" class="site-btn">Browse</a>
+				<a href="#services" class="site-btn">Browse</a>
 			</div>
 		</div>
 	</div>
@@ -174,7 +174,7 @@
 
 
 	<!-- services card section-->
-	<div class="services-card-section spad">
+	<div id="3projects" class="services-card-section spad">
 		<div class="container">
 			<div class="row">
 				@foreach ($lastThreeProjects as $key => $item)

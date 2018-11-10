@@ -20,29 +20,32 @@
 			<div class="row">
 				<div class="col-md-8 col-sm-7 blog-posts">
 					@foreach ($articlesContent as $key => $article)
-					<!-- Post item -->
-					<div class="post-item">
-						<div class="post-thumbnail">
-							<img src="/storage/images/modified/blog/{{$article->article_images->image_url_1}}" alt="">
-							<div class="post-date">
-								<h2>{{$article->created_at->format('d')}}</h2>
-								<h3>{{$article->created_at->format('M')}} {{$article->created_at->format('Y')}}</h3>
+							<!-- Post item -->
+							<div class="post-item">
+								<div class="post-thumbnail">
+									<img src="/storage/images/modified/blog/{{$article->article_images->image_url_1}}" alt="">
+									<div class="post-date">
+										<h2>{{$article->created_at->format('d')}}</h2>
+										<h3>{{$article->created_at->format('M')}} {{$article->created_at->format('Y')}}</h3>
+									</div>
+								</div>
+								<div class="post-content">
+									<h2 class="post-title">{{$article->title}}</h2>
+									<div class="post-meta">
+										<a href="">{{$article->users->lastName}} {{$article->users->firstName}}</a>
+										{{-- {{$articleTags = $ArticleFullReferenced[$key]->tags}} --}}
+										@foreach ($ArticleFullReferenced[$key]->tags as $tag)
+											@if ($tag->validation == 1)
+												<a href="">{{$tag->name}}</a>
+											@endif
+										@endforeach
+										{{-- {{$ArticleFullReferenced[$key]->comments->count()}} --}}
+										<a href="">{{$ArticleFullReferenced[$key]->comments->where('validation', 1)->count()}} Comments</a>
+									</div>
+									<p>{{$article->preview_content}}</p>
+									<a href="/blogPost/{{$article->id}}" class="read-more">Read More</a>
+								</div>
 							</div>
-						</div>
-						<div class="post-content">
-							<h2 class="post-title">{{$article->title}}</h2>
-							<div class="post-meta">
-								{{-- {{$articleTags = $ArticleFullReferenced[$key]->tags}} --}}
-								@foreach ($ArticleFullReferenced[$key]->tags as $tag)
-									<a href="">{{$tag->name}}</a>
-								@endforeach
-								{{-- {{$ArticleFullReferenced[$key]->comments->count()}} --}}
-								<a href="">{{$ArticleFullReferenced[$key]->comments->where('validation', 1)->count()}} Comments</a>
-							</div>
-							<p>{{$article->preview_content}}</p>
-							<a href="/blogPost/{{$article->id}}" class="read-more">Read More</a>
-						</div>
-					</div>
 					@endforeach
 					<!-- Pagination -->
 					<div class="page-pagination">

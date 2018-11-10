@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->text('preview_content');
             $table->text('full_content');
             $table->unsignedInteger('user_id')->references('id')->on('users');
+            $table->unsignedInteger('validation')->default(0);
             $table->timestamps();
         });
     }

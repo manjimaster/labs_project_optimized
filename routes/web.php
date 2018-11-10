@@ -18,7 +18,6 @@ Auth::routes();
 
 Route::get('/admin-master', 'HomeController@index')->name('home');
 
-
 Route::get('/index', 'IndexController@index')->name('index');
 
 Route::get('/services', 'ServiceController@index')->name('services');
@@ -28,3 +27,12 @@ Route::get('/blog', 'BlogController@Index')->name('blog');
 Route::get('/contact', 'ContactController@index')->name('contact');
 
 Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
+
+// Editor routes
+
+
+// Admin routes
+
+Route::get('/admin-master/logo', 'AdminIndexController@logoShow')->name('showLogo');
+
+Route::get('/admin-master/logo', 'AdminIndexController@logoUpdate')->name('updateLogo');

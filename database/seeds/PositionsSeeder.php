@@ -13,16 +13,20 @@ class PositionsSeeder extends Seeder
     {
         DB::table('positions')->insert([
             [
-                'name' => 'Trainee'
+                'name' => 'Trainee',
+                'validation' => '1'
             ],
             [
-                'name' => 'Project Manager'
+                'name' => 'Project Manager',
+                'validation' => '1'
             ],
             [
-                'name' => 'Junior Developer'
+                'name' => 'Junior Developer',
+                'validation' => '1'
             ],
             [
-                'name' => 'Digital Designer'
+                'name' => 'Digital Designer',
+                'validation' => '1'
             ],
         ]);
     }

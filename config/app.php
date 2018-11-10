@@ -178,6 +178,12 @@ return [
          */
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
 
+        /*
+         * Image Intervention
+         */
+        Intervention\Image\ImageServiceProvider::class,
+
+
     ],
 
     /*
@@ -226,6 +232,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Image Intervention
+         */
+        'ImageIntervention' => Intervention\Image\Facades\Image::class
 
     ],
 

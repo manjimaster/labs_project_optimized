@@ -15,9 +15,11 @@
 						<div class="post-content">
 							<h2 class="post-title">{{$article->title}}</h2>
 							<div class="post-meta">
-							<a href="">{{$article->users->lastName}} {{$article->users->firstName}}</a>
+								<a href="">{{$article->users->lastName}} {{$article->users->firstName}}</a>
 								@foreach ($articleTags as $tag)
-									<a href="">{{$tag->name}}</a>
+									@if ($tag->validation == 1)
+										<a href="">{{$tag->name}}</a>
+									@endif
 								@endforeach
 								<a href="#comments">{{$articleComments->where('validation', 1)->count()}} Comments</a>
 							</div>

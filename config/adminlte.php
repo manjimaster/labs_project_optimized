@@ -108,7 +108,12 @@ return [
     */
 
     'menu' => [
-        'ADMIN PART',
+        [
+            'text' => 'See the site',
+            'url' => '/',
+            'icon' => 'file-alt',
+        ],
+        'ADMIN',
         [
             'text' => 'Blog',
             'url'  => 'admin-master/blog',
@@ -137,46 +142,48 @@ return [
             'icon_color' => 'aqua',
         ],
         [
-            'text' => 'Logo',
-            'url' => '/admin-master/logo',
-            'icon' => 'puzzle-piece',
-        ],
-        'ACCOUNT SETTINGS',
-        [
-            'text' => 'Profile',
-            'url'  => 'admin-master/profile',
-            'icon' => 'user',
-        ],
-        // [
-        //     'text' => 'Change Password',
-        //     'url'  => 'admin-master/settings',
-        //     'icon' => 'lock',
-        // ],
-        'PAGES',
-        [
-            'text' => 'See the site',
-            'url' => '/',
-            'icon' => 'file-alt',
-        ],
-        [
             'text' => 'Home page',
             'icon' => 'home',
             'submenu' => [
                 [
-                    'text' => 'Level One',
-                    'url' => 'admin-master/',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url' => 'admin-master/',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url' => 'admin-master/',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Logo',
+                    'icon' => 'puzzle-piece',
+                    'url' => 'showLogo',
+                ],
+                [
+                    'text' => 'Carousel',
+                    'icon' => 'play',
+                    'url' => '/admin-master/carousel',
+                ],
+                [
+                    'text' => 'Invitation after 3 services',
+                    'icon' => 'align-center',
+                    'url' => '/admin-master/inv1',
+                ],
+                [
+                    'text' => 'Video',
+                    'icon' => 'video',
+                    'url' => '/admin-master/video',
+                ],
+                [
+                    'text' => 'Testimonials',
+                    'icon' => 'comments',
+                    'url' => '/admin-master/testimonials',
+                ],
+                [
+                    'text' => 'All services',
+                    'icon' => 'briefcase',
+                    'url' => '/admin-master/services',
+                ],
+                [
+                    'text' => 'Team',
+                    'icon' => 'people-carry',
+                    'url' => '/admin-master/team',
+                ],
+                [
+                    'text' => 'Ready invitation',
+                    'icon' => 'align-center',
+                    'url' => '/admin-master/inv2',
                 ],
             ],
         ],
@@ -185,44 +192,101 @@ return [
             'icon' => 'concierge-bell',
             'submenu' => [
                 [
-                    'text' => 'Level One',
-                    'url' => 'admin-master/',
+                    'text' => 'Projects',
+                    'icon' => 'network-wired',
                     'submenu' => [
                         [
-                            'text' => 'Level Two',
-                            'url' => 'admin-master/',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url' => 'admin-master/',
-                                ],
-                            ],
+                            'text' => 'All projects',
+                            'icon' => 'project-diagram',
+                            'url' => '/admin-master/allProjects',
+                        ],
+                        [
+                            'text' => '6 projects part',
+                            'icon' => 'code-branch',
+                            'url' => 'admin-master/sixProjects',
                         ],
                     ],
                 ],
             ],
-        ],
+        ], 
         [
             'text' => 'Blog page',
             'icon' => 'newspaper',
             'submenu' => [
                 [
-                    'text' => 'Level One',
-                    'url' => 'admin-master/',
+                    'text' => 'Validations',
+                    'icon' => 'check-circle',
                     'submenu' => [
                         [
-                            'text' => 'Level Two',
-                            'url' => 'admin-master/',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url' => 'admin-master/',
-                                ],
-                            ],
+                            'text' => 'Validate articles/comments',
+                            'icon' => 'pen-fancy',
+                            'url' => '/admin-master/validateArticles',
+                        ],
+                        [
+                            'text' => 'Validate tags',
+                            'icon' => 'tags',
+                            'url' => '/admin-master/validateTags',
+                        ],
+                        [
+                            'text' => 'Validate categories',
+                            'icon' => 'boxes',
+                            'url' => '/admin-master/validatecategories',
                         ],
                     ],
                 ],
+                [
+                    'text' => 'Write article',
+                    'icon' => 'newspaper',
+                    'url' => '/admin-master/writeArticle',
+                ],
+                [
+                    'text' => 'See and edit articles',
+                    'icon' => 'newspaper',
+                    'url' => '/admin-master/personalArticles',
+                ],
             ],
+        ],
+        [
+            'text' => 'Contact',
+            'icon' => 'mail-bulk',
+            'url' => 'admin-master/contact',
+        ],
+        'ACCOUNT SETTINGS',
+        [
+            'text' => 'Profile',
+            'icon' => 'user',
+            'url'  => 'admin-master/profile',
+        ],
+        [
+            'text' => 'Manage users',
+            'icon' => 'users',
+            'url' => 'admin-master/users',
+        ],
+        [
+            'text' => 'Manage roles',
+            'icon' => 'user-tie',
+            'url' => 'admin-master/users',
+        ],
+        [
+            'text' => 'Manage positions',
+            'icon' => 'user-tag',
+            'url' => 'admin-master/users',
+        ],
+        // [
+        //     'text' => 'Change Password',
+        //     'icon' => 'lock',
+        //     'url'  => 'admin-master/settings',
+        // ],
+        'Editor',
+        [
+            'text' => 'Write article',
+            'icon' => 'newspaper',
+            'url' => '/admin-master/writeArticle',
+        ],
+        [
+            'text' => 'See and edit articles',
+            'icon' => 'newspaper',
+            'url' => '/admin-master/personalArticles',
         ],
     ],
 
