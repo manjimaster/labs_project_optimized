@@ -20,6 +20,7 @@ class CreateTestimonialsTable extends Migration
             $table->text('content');
             $table->unsignedInteger('validation')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -148,7 +148,7 @@ return [
                 [
                     'text' => 'Logo',
                     'icon' => 'puzzle-piece',
-                    'url' => 'showLogo',
+                    'url' => '/admin-master/logo',
                 ],
                 [
                     'text' => 'Carousel',

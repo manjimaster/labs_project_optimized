@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('icon');
             $table->integer('validation')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

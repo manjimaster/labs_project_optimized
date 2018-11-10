@@ -24,6 +24,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedInteger('user_id')->references('id')->on('users')->nullable();
             $table->unsignedInteger('validation')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

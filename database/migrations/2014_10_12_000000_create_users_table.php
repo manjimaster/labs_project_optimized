@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('team');
             $table->unsignedInteger('permanentTeamMember')->default(0);
             $table->string('biography');
+            $table->softDeletes();
         });
     }
 

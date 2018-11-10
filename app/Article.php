@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Article extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
     public function article_images()
     {
         return $this->belongsTo('App\ArticleImage', 'article_images_id');
