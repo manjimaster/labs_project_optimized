@@ -58,3 +58,13 @@ Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
     Route::get('/admin-master/inv1/edit/{id}', 'AdminIndexController@inv1Edit')->name('editInv1');
 
     Route::post('/admin-master/inv1/update/{id}', 'AdminIndexController@inv1Update')->name('updateInv1');
+
+    // video
+
+    Route::get('/admin-master/video', 'AdminIndexController@videoShow')->name('showVideo');
+
+    Route::post('/admin-master/video/update', 'AdminIndexController@videoUpdate1')->name('updateVideo1');
+    
+    Route::get('/admin-master/video/edit/{id}', 'AdminIndexController@videoEdit')->name('editVideo');
+
+    Route::post('/admin-master/video/update/{id}', 'AdminIndexController@videoUpdate2')->name('updateVideo2');
