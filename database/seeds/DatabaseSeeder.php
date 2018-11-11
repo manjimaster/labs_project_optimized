@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TextsSeeder::class);
         $this->call(TagsSeeder::class);
         $this->call(CategoriesSeeder::class);
+        $this->call(IcnosSeeder::class);
         $this->call(ServicesSeeder::class);
         $this->call(RolesUsersSeeder::class);
         $this->call(ArticlesImagesSeeder::class);

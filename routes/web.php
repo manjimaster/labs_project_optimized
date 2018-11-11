@@ -80,3 +80,15 @@ Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
     Route::post('/admin-master/testimonials/update/{id}', 'AdminIndexController@testimonialUpdate')->name('updateTestimonial');
 
     Route::get('/admin-master/testimonials/delete/{id}', 'AdminIndexController@testimonialDelete')->name('deleteTestimonial');
+
+    // Services
+
+    Route::get('/admin-master/services', 'AdminIndexController@serviceShow')->name('showService');
+
+    Route::post('/admin-master/services/create', 'AdminIndexController@serviceCreate')->name('createService');
+
+    Route::get('/admin-master/services/edit/{id}', 'AdminIndexController@serviceEdit')->name('editService');
+
+    Route::post('/admin-master/services/update/{id}', 'AdminIndexController@serviceUpdate')->name('updateService');
+
+    Route::get('/admin-master/services/delete/{id}', 'AdminIndexController@serviceDelete')->name('deleteService');

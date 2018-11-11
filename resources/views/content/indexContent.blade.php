@@ -32,7 +32,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="lab-card">
                         <div class="icon">
-                            <i class="{{$randomService->icon}}"></i>
+                            <i class="{{$randomService->icons->class}}"></i>
                         </div>
                         <h2>{{$randomService->name}}</h2>
                         <p>{{$randomService->content}}</p>
@@ -186,7 +186,7 @@
                     <div class="col-md-4 col-sm-6 mx-auto">
                         <div class="service">
                             <div class="icon">
-                                <i class="{{$service->icon}}"></i>
+                                <i class="{{$service->icons->class}}"></i>
                             </div>
                             <div class="service-text">
                                 <h2>{{$service->name}}</h2>

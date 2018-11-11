@@ -45,7 +45,7 @@
 				<div class="col-md-4 col-sm-6 mx-auto">
 					<div class="service">
 						<div class="icon">
-							<i class="{{$service->icon}}"></i>
+							<i class="{{$service->icons->class}}"></i>
 						</div>
 						<div class="service-text">
 							<h2>{{$service->name}}</h2>

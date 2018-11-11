@@ -16,4 +16,5 @@
         @endforeach
     @endforeach --}}
     ZSH THEME POUR CONSOLE
+    CRUD POUR BACKGROUNDS ET TESTIMONIAL GUY
 @stop

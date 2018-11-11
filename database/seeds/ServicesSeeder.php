@@ -15,52 +15,52 @@ class ServicesSeeder extends Seeder
             [
                 'name' => 'service1',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-001-picture',
+                'icons_id' => '1',
             ],
             [
                 'name' => 'service2',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-002-caliper',
+                'icons_id' => '2',
             ],
             [
                 'name' => 'service3',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-003-energy-drink',
+                'icons_id' => '3',
             ],
             [
                 'name' => 'service4',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-004-build',
+                'icons_id' => '4',
             ],
             [
                 'name' => 'service5',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-005-thinking-1',
+                'icons_id' => '5',
             ],
             [
                 'name' => 'service6',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-006-prism',
+                'icons_id' => '6',
             ],
             [
                 'name' => 'service7',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-007-paint',
+                'icons_id' => '7',
             ],
             [
                 'name' => 'service8',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-008-team',
+                'icons_id' => '8',
             ],
             [
                 'name' => 'service9',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-009-idea-3',
+                'icons_id' => '9',
             ],
             [
                 'name' => 'service10',
                 'content' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequuntur.',
-                'icon' => 'flaticon-010-diamond',
+                'icons_id' => '10',
             ],
         ]);
     }
