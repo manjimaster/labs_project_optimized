@@ -68,3 +68,15 @@ Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
     Route::get('/admin-master/video/edit/{id}', 'AdminIndexController@videoEdit')->name('editVideo');
 
     Route::post('/admin-master/video/update/{id}', 'AdminIndexController@videoUpdate2')->name('updateVideo2');
+
+    // Testimonials
+
+    Route::get('/admin-master/testimonials', 'AdminIndexController@testimonialShow')->name('showTestimonial');
+
+    Route::post('/admin-master/testimonials/create', 'AdminIndexController@testimonialCreate')->name('createTestimonial');
+
+    Route::get('/admin-master/testimonials/edit/{id}', 'AdminIndexController@testimonialEdit')->name('editTestimonial');
+
+    Route::post('/admin-master/testimonials/update/{id}', 'AdminIndexController@testimonialUpdate')->name('updateTestimonial');
+
+    Route::get('/admin-master/testimonials/delete/{id}', 'AdminIndexController@testimonialDelete')->name('deleteTestimonial');
