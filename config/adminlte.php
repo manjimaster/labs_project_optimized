@@ -176,11 +176,6 @@ return [
                     'url' => '/admin-master/services',
                 ],
                 [
-                    'text' => 'Team',
-                    'icon' => 'people-carry',
-                    'url' => '/admin-master/team',
-                ],
-                [
                     'text' => 'Ready invitation',
                     'icon' => 'align-center',
                     'url' => '/admin-master/inv2',
@@ -199,11 +194,6 @@ return [
                             'text' => 'All projects',
                             'icon' => 'project-diagram',
                             'url' => '/admin-master/allProjects',
-                        ],
-                        [
-                            'text' => '6 projects part',
-                            'icon' => 'code-branch',
-                            'url' => 'admin-master/sixProjects',
                         ],
                     ],
                 ],
@@ -234,16 +224,16 @@ return [
                         ],
                     ],
                 ],
-                [
-                    'text' => 'Write article',
-                    'icon' => 'newspaper',
-                    'url' => '/admin-master/writeArticle',
-                ],
-                [
-                    'text' => 'See and edit articles',
-                    'icon' => 'newspaper',
-                    'url' => '/admin-master/personalArticles',
-                ],
+                // [
+                //     'text' => 'Write article',
+                //     'icon' => 'newspaper',
+                //     'url' => '/admin-master/writeArticle',
+                // ],
+                // [
+                //     'text' => 'See and edit articles',
+                //     'icon' => 'newspaper',
+                //     'url' => '/admin-master/personalArticles',
+                // ],
             ],
         ],
         [
@@ -262,32 +252,22 @@ return [
             'icon' => 'users',
             'url' => 'admin-master/users',
         ],
-        [
-            'text' => 'Manage roles',
-            'icon' => 'user-tie',
-            'url' => 'admin-master/users',
-        ],
-        [
-            'text' => 'Manage positions',
-            'icon' => 'user-tag',
-            'url' => 'admin-master/users',
-        ],
         // [
         //     'text' => 'Change Password',
         //     'icon' => 'lock',
         //     'url'  => 'admin-master/settings',
         // ],
-        'Editor',
-        [
-            'text' => 'Write article',
-            'icon' => 'newspaper',
-            'url' => '/admin-master/writeArticle',
-        ],
-        [
-            'text' => 'See and edit articles',
-            'icon' => 'newspaper',
-            'url' => '/admin-master/personalArticles',
-        ],
+        // 'Editor',
+        // [
+        //     'text' => 'Write article',
+        //     'icon' => 'newspaper',
+        //     'url' => '/admin-master/writeArticle',
+        // ],
+        // [
+        //     'text' => 'See and edit articles',
+        //     'icon' => 'newspaper',
+        //     'url' => '/admin-master/personalArticles',
+        // ],
     ],
 
     /*

@@ -135,7 +135,7 @@
 								<p>{{$item->content}}</p>
 							</div>
 							<div class="icon">
-							<i class="{{$item->icon}}"></i>
+							<i class="{{$item->icons->class}}"></i>
 							</div>
 						</div>		
 					@endif
@@ -153,7 +153,7 @@
 					@if ($key<3)
 						<div class="icon-box light">
 							<div class="icon">
-								<i class="{{$item->icon}}"></i>
+								<i class="{{$item->icons->class}}"></i>
 							</div>
 							<div class="service-text">
 								<h2>{{$item->name}}</h2>

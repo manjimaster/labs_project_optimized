@@ -13,4 +13,8 @@ class Project extends Model
     {
         return $this->belongsTo('App\ProjectImage', 'project_images_id');
     }
+    public function icons()
+    {
+        return $this->belongsTo('App\Icon', 'icons_id');
+    }
 }

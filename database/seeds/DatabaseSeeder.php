@@ -15,8 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersImagesSeeder::class);
         $this->call(PositionsSeeder::class);
         $this->call(UsersSeeder::class);
-        $this->call(ProjectImagesSeeder::class);
-        $this->call(ProjectsSeeder::class);
         $this->call(TestimonialImagesSeeder::class);
         $this->call(TestimonialsSeeder::class);
         $this->call(InstagramSeeder::class);
@@ -27,6 +25,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TagsSeeder::class);
         $this->call(CategoriesSeeder::class);
         $this->call(IcnosSeeder::class);
+        $this->call(ProjectImagesSeeder::class);
+        $this->call(ProjectsSeeder::class);
         $this->call(ServicesSeeder::class);
         $this->call(RolesUsersSeeder::class);
         $this->call(ArticlesImagesSeeder::class);

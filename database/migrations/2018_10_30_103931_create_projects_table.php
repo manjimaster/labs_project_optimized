@@ -17,7 +17,6 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('content');
-            $table->string('icon');
             $table->integer('validation')->default(0);
             $table->timestamps();
             $table->softDeletes();

@@ -17,6 +17,7 @@ class CreateProjectImagesTable extends Migration
             $table->increments('id');
             $table->string('image_url_1');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

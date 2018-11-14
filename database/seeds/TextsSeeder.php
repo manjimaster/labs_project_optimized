@@ -56,9 +56,8 @@ class TextsSeeder extends Seeder
                 'comments' => 'title of team part',
             ],
             [
-                'content_p1' => '<h2>Are you ready to stand out?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est.</p>',
-                'content_p2' =>'lorem', 
+                'content_p1' => 'Are you ready to stand out?',
+                'content_p2' =>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est.', 
                 'content_p3' =>'lorem', 
                 'uses' => '1f',
                 'comments' => 'stand out text',

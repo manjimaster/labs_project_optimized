@@ -6,6 +6,7 @@
     <title>@yield('title_prefix', config('adminlte.title_prefix', ''))
 @yield('title', config('adminlte.title', 'AdminLTE 2'))
 @yield('title_postfix', config('adminlte.title_postfix', ''))</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -37,6 +38,8 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <script src="/ckeditor/ckeditor.js"></script>
 </head>
 <body class="hold-transition @yield('body_class')">
 
@@ -63,5 +66,11 @@
 
 @yield('adminlte_js')
 
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
+<script>
+    CKEDITOR.replace( 'editor2' );
+</script>
 </body>
 </html>

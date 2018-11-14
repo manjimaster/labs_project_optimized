@@ -131,7 +131,15 @@
 @stop
 
 @section('adminlte_js')
+
+    <script src="{{asset('js/app.js')}}"></script>
+    <script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'editor1' );
+</script>
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
     @stack('js')
     @yield('js')
+    
 @stop

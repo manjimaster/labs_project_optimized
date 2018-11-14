@@ -297,7 +297,8 @@
             <div class="col-md-9">
                 @foreach ($textsContent as $text)
                     @if($text->uses=='1f')
-                        {!! $text->content_p1 !!}
+                        <h2>{{ $text->content_p1 }}</h2>
+                        <p>{{ $text->content_p2 }}</p>
                     @endif
                 @endforeach
             </div>

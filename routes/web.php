@@ -22,11 +22,11 @@ Route::get('/index', 'IndexController@index')->name('index');
 
 Route::get('/services', 'ServiceController@index')->name('services');
 
-Route::get('/blog', 'BlogController@Index')->name('blog');
+Route::get('/blog', 'BlogController@IblogPostndex')->name('blog');
 
 Route::get('/contact', 'ContactController@index')->name('contact');
 
-Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
+Route::get('/blogPost/{id}', 'BlogPostControlblogPostler@index')->name('blogPost');
 
 // Editor routes
 
@@ -92,3 +92,59 @@ Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
     Route::post('/admin-master/services/update/{id}', 'AdminIndexController@serviceUpdate')->name('updateService');
 
     Route::get('/admin-master/services/delete/{id}', 'AdminIndexController@serviceDelete')->name('deleteService');
+
+    // invitation before contact - inv2
+
+    Route::get('/admin-master/inv2', 'AdminIndexController@inv2Show')->name('showInv2');
+
+    Route::get('/admin-master/inv2/edit/{id}', 'AdminIndexController@inv2Edit')->name('editInv2');
+
+    Route::post('/admin-master/inv2/update/{id}', 'AdminIndexController@inv2Update')->name('updateInv2');
+
+    // Projects
+
+    Route::get('/admin-master/allProjects', 'AdminServiceController@projectShow')->name('showProject');
+
+    Route::post('/admin-master/allProjects/create', 'AdminServiceController@projectCreate')->name('createProject');
+
+    Route::get('/admin-master/allProjects/edit/{id}', 'AdminServiceController@projectEdit')->name('editProject');
+
+    Route::post('/admin-master/allProjects/update/{id}', 'AdminServiceController@projectUpdate')->name('updateProject');
+
+    Route::get('/admin-master/allProjects/delete/{id}', 'AdminServiceController@projectDelete')->name('deleteProject');
+
+    // invitation before contact - inv2
+
+    Route::get('/admin-master/contact', 'AdminContactController@contactShow')->name('showContact');
+
+    Route::get('/admin-master/contact/edit', 'AdminContactController@contactEdit')->name('editContact');
+
+    Route::post('/admin-master/contact/update', 'AdminContactController@contactUpdate')->name('updateContact');
+
+    // Users
+
+    Route::get('/admin-master/users', 'AdminUserController@usersShow')->name('showUsers');
+
+    Route::post('/admin-master/users/create', 'AdminUserController@usersCreate')->name('createUsers');
+
+    Route::get('/admin-master/users/edit/{id}', 'AdminUserController@usersEdit')->name('editUsers');
+
+    Route::post('/admin-master/users/update/{id}', 'AdminUserController@usersUpdate')->name('updateUsers');
+
+    Route::get('/admin-master/users/delete/{id}', 'AdminUserController@usersDelete')->name('deleteUsers');
+
+// All routes
+
+    // Users
+
+    Route::get('/admin-master/profile', 'AdminUserController@profileShow')->name('showProfile');
+
+    Route::get('/admin-master/profile/edit/{id}', 'AdminUserController@profileEdit')->name('editProfile');
+
+    Route::post('/admin-master/profile/update/{id}', 'AdminUserController@profileUpdate')->name('updateProfile');
+
+    // All blogs of Auth::user
+
+    Route::get('/admin-master/articles/{id}', 'AdminUserController@ArticleOfUserShow')->name('showPersonalArticles');
+
+    Route::get('/admin-master/articles/edit/{id}', 'AdminUserController@ArticleOfUserEdit')->name('editPersonalArticles');

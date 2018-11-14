@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="/ckeditor/ckeditor.js"></script>
 </head>
 <body>
     <div id="app">
@@ -76,5 +77,10 @@
             @yield('content')
         </main>
     </div>
+    <!--====== Javascripts & Jquery ======-->
+	<script src="{{asset('js/app.js')}}"></script>
+	{{-- <script>
+		CKEDITOR.replace( 'editor1' );
+	</script> --}}
 </body>
 </html>
