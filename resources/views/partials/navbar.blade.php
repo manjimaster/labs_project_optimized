@@ -19,9 +19,25 @@
 				<li class="{{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}">
 					<a href="{{route('contact')}}">Contact</a>
 				</li>
+				@guest
+					<li>
+						<a href="/login">Log In</a>
+					</li>
+				@endguest
 				@auth
 					<li>
-						<a class="bg-danger" href="{{route('home')}}">Admin</a>
+						<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ trans('adminlte::adminlte.log_out') }} </a>
+						<form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;">
+							@if(config('adminlte.logout_method'))
+								{{ method_field(config('adminlte.logout_method')) }}
+							@endif
+								{{ csrf_field() }}
+						</form>
+					</li>
+				@endauth
+				@auth
+					<li>
+						<a class="bg-danger" href="{{route('home')}}">Club <i class="fas fa-globe"></i></a>
 					</li>
 				@endauth
 			</ul>

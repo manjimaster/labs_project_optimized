@@ -16,12 +16,12 @@
 							<h2 class="post-title">{{$article->title}}</h2>
 							<div class="post-meta">
 								<a href="">{{$article->users->lastName}} {{$article->users->firstName}}</a>
-								@foreach ($articleTags as $tag)
+								@foreach ($article->tags as $tag)
 									@if ($tag->validation == 1)
 										<a href="">{{$tag->name}}</a>
 									@endif
 								@endforeach
-								<a href="#comments">{{$articleComments->where('validation', 1)->count()}} Comments</a>
+								<a href="#comments">{{$article->comments->where('validation', 1)->count()}} Comments</a>
 							</div>
 							<p>{!! $article->preview_content !!}</p>
 							<p>{!! $article->full_content !!}</p>
@@ -38,13 +38,17 @@
 						</div>
 						<!-- Post Comments -->
 						<div id="comments" class="comments">
-							<h2>Comments {{$articleComments->where('validation', 1)->count()}}</h2>
+							<h2>Comments {{$article->comments->where('validation', 1)->count()}}</h2>
 							<ul class="comment-list">
-								@foreach ($articleComments as $comment)
+								@foreach ($article->comments as $comment)
 									@if ($comment->validation == 1)
 										<li>
 											<div class="avatar">
+											@if ($comment->user_id != null)
+												<img src="/storage/images/modified/team/{{$comment->image}}" alt="">
+											@else
 											<img src="/storage/images/modified/avatar/{{$comment->image}}" alt="">
+											@endif
 											</div>
 											<div class="commetn-text">
 												<h3>{{$comment->name}} | {{$article->created_at->format('d')}} {{$article->created_at->format('M')}}, {{$article->created_at->format('Y')}} | Reply</h3>
@@ -59,7 +63,8 @@
 						<div class="row">
 							<div class="col-md-9 comment-from">
 								<h2>Leave a comment</h2>
-								<form class="form-class">
+								<form class="form-class" action="{{route('writeCommentOnBlogPost', $article->id)}}" method="post">
+									@csrf
 									<div class="row">
 										<div class="col-sm-6">
 											<input type="text" name="name" placeholder="Your name">
@@ -69,8 +74,8 @@
 										</div>
 										<div class="col-sm-12">
 											<input type="text" name="subject" placeholder="Subject">
-											<textarea name="message" placeholder="Message"></textarea>
-											<button class="site-btn">send</button>
+											<textarea name="content" placeholder="Message"></textarea>
+											<button class="site-btn" type="submit">send</button>
 										</div>
 									</div>
 								</form>

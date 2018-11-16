@@ -18,6 +18,7 @@ class CreateTagsTable extends Migration
             $table->string('name');
             $table->unsignedInteger('validation')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

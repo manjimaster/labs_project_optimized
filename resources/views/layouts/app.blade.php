@@ -79,8 +79,5 @@
     </div>
     <!--====== Javascripts & Jquery ======-->
 	<script src="{{asset('js/app.js')}}"></script>
-	{{-- <script>
-		CKEDITOR.replace( 'editor1' );
-	</script> --}}
 </body>
 </html>

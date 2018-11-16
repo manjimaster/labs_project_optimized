@@ -20,18 +20,54 @@ Route::get('/admin-master', 'HomeController@index')->name('home');
 
 Route::get('/index', 'IndexController@index')->name('index');
 
+Route::post('/index/newsletter', 'IndexController@newsletterAdd')->name('newsletter');
+
+Route::post('/index/comment{id}', 'IndexController@commentAdd')->name('writeCommentOnBlogPost');
+
 Route::get('/services', 'ServiceController@index')->name('services');
 
-Route::get('/blog', 'BlogController@IblogPostndex')->name('blog');
+Route::get('/blog', 'BlogController@index')->name('blog');
 
 Route::get('/contact', 'ContactController@index')->name('contact');
 
-Route::get('/blogPost/{id}', 'BlogPostControlblogPostler@index')->name('blogPost');
+Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
 
 // Editor routes
 
+// All routes
+
+Route::middleware('can:member')->group(function () {
+    
+    // Users
+
+    Route::get('/admin-master/profile', 'AdminUserController@profileShow')->name('showProfile');
+
+    Route::get('/admin-master/profile/edit/{id}', 'AdminUserController@profileEdit')->name('editProfile');
+
+    Route::post('/admin-master/profile/update/{id}', 'AdminUserController@profileUpdate')->name('updateProfile');
+
+});
+
+    // Personal articles
+
+Route::middleware('can:editor')->group(function () {
+
+    Route::get('/admin-master/articles/createPage', 'AdminUserController@ArticleOfUserCreatePage')->name('createPagePersonalArticles');
+
+    Route::get('/admin-master/articles/{id}', 'AdminUserController@ArticleOfUserShow')->name('showPersonalArticles');
+
+    Route::get('/admin-master/articles/edit/{id}', 'AdminUserController@ArticleOfUserEdit')->name('editPersonalArticles');
+
+    Route::post('/admin-master/articles/update/{id}', 'AdminUserController@ArticleOfUserUpdate')->name('updatePersonalArticles');
+
+
+    Route::post('/admin-master/articles/create', 'AdminUserController@ArticleOfUserCreate')->name('createPersonalArticles');
+
+});
 
 // Admin routes
+
+Route::middleware('can:admin')->group(function() {
 
     // Logo
 
@@ -133,18 +169,42 @@ Route::get('/blogPost/{id}', 'BlogPostControlblogPostler@index')->name('blogPost
 
     Route::get('/admin-master/users/delete/{id}', 'AdminUserController@usersDelete')->name('deleteUsers');
 
-// All routes
+    // Tags
 
-    // Users
+    Route::get('/admin-master/Tags', 'AdminTagController@TagsShow')->name('showTags');
 
-    Route::get('/admin-master/profile', 'AdminUserController@profileShow')->name('showProfile');
+    Route::post('/admin-master/Tags/create', 'AdminTagController@TagsCreate')->name('createTags');
 
-    Route::get('/admin-master/profile/edit/{id}', 'AdminUserController@profileEdit')->name('editProfile');
+    Route::get('/admin-master/Tags/validate/{id}', 'AdminTagController@TagsValidate')->name('validateTags');
 
-    Route::post('/admin-master/profile/update/{id}', 'AdminUserController@profileUpdate')->name('updateProfile');
+    Route::get('/admin-master/Tags/delete/{id}', 'AdminTagController@TagsDelete')->name('deleteTags');
+
+    // Categories
+
+    Route::get('/admin-master/Categories', 'AdminCategorieController@CategoriesShow')->name('showCategories');
+
+    Route::post('/admin-master/Categories/create', 'AdminCategorieController@CategoriesCreate')->name('createCategories');
+
+    Route::get('/admin-master/Categories/validate/{id}', 'AdminCategorieController@CategoriesValidate')->name('validateCategories');
+
+    Route::get('/admin-master/Categories/delete/{id}', 'AdminCategorieController@CategoriesDelete')->name('deleteCategories');
 
     // All blogs of Auth::user
 
-    Route::get('/admin-master/articles/{id}', 'AdminUserController@ArticleOfUserShow')->name('showPersonalArticles');
+    Route::get('/admin-master/articles/all', 'AdminUserController@ArticleSeeAll')->name('ArticleSeeAll');
 
-    Route::get('/admin-master/articles/edit/{id}', 'AdminUserController@ArticleOfUserEdit')->name('editPersonalArticles');
+    Route::get('/admin-master/articles/toValidate', 'AdminUserController@ArticleToValidateShow')->name('articlesToValidate');
+
+    Route::get('/admin-master/articles/validateArticle/{id}', 'AdminUserController@validateArticle')->name('validateArticle');
+
+    // All comments
+
+    Route::get('/admin-master/comments/toValidate', 'AdminUserController@CommentToValidateShow')->name('CommentsToValidate');
+
+    Route::get('/admin-master/comments/validateArticle/{id}', 'AdminUserController@validateComment')->name('validateComment');
+
+    // Admin comments
+
+    Route::post('/admin-master/comment{id}', 'IndexController@adminCommentAdd')->name('writeCommentOnAdminAllArticle');
+});
+

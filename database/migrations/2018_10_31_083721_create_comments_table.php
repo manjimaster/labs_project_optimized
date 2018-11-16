@@ -20,8 +20,10 @@ class CreateCommentsTable extends Migration
             $table->string('subject');
             $table->text('content');
             $table->string('image')->nullable();
-            $table->unsignedInteger('article_id')->references('id')->on('articles');
-            $table->unsignedInteger('user_id')->references('id')->on('users')->nullable();
+            $table->unsignedInteger('article_id');
+            $table->foreign('article_id')->references('id')->on('articles');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('validation')->default(0);
             $table->timestamps();
             $table->softDeletes();

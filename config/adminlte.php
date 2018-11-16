@@ -117,7 +117,7 @@ return [
         [
             'text' => 'Blog',
             'url'  => 'admin-master/blog',
-            'can'  => 'manage-blog', //middleware !
+            'can' => 'admin',
         ],
         [
             'text'        => 'Pages',
@@ -125,25 +125,27 @@ return [
             'icon'        => 'file',
             'label'       => 4,
             'label_color' => 'success',
+            'can' => 'admin',
         ],
-        [
-            'text'       => 'Important',
-            'icon' => 'circle-notch',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon'       => 'circle-notch',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon'       => 'circle-notch',
-            'icon_color' => 'aqua',
-        ],
+        // [
+        //     'text'       => 'Important',
+        //     'icon' => 'circle-notch',
+        //     'icon_color' => 'red',
+        // ],
+        // [
+        //     'text'       => 'Warning',
+        //     'icon'       => 'circle-notch',
+        //     'icon_color' => 'yellow',
+        // ],
+        // [
+        //     'text'       => 'Information',
+        //     'icon'       => 'circle-notch',
+        //     'icon_color' => 'aqua',
+        // ],
         [
             'text' => 'Home page',
             'icon' => 'home',
+            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Logo',
@@ -185,6 +187,7 @@ return [
         [
             'text' => 'Services page',
             'icon' => 'concierge-bell',
+            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Projects',
@@ -202,55 +205,59 @@ return [
         [
             'text' => 'Blog page',
             'icon' => 'newspaper',
+            'can' => 'admin',
             'submenu' => [
                 [
                     'text' => 'Validations',
                     'icon' => 'check-circle',
                     'submenu' => [
                         [
-                            'text' => 'Validate articles/comments',
+                            'text' => 'Validate articles',
                             'icon' => 'pen-fancy',
-                            'url' => '/admin-master/validateArticles',
+                            'url' => '/admin-master/articles/toValidate',
+                        ],
+                        [
+                            'text' => 'Validate comments',
+                            'icon' => 'pen-fancy',
+                            'url' => '/admin-master/comments/toValidate',
                         ],
                         [
                             'text' => 'Validate tags',
                             'icon' => 'tags',
-                            'url' => '/admin-master/validateTags',
+                            'url' => '/admin-master/Tags',
                         ],
                         [
                             'text' => 'Validate categories',
                             'icon' => 'boxes',
-                            'url' => '/admin-master/validatecategories',
+                            'url' => '/admin-master/Categories',
                         ],
                     ],
                 ],
-                // [
-                //     'text' => 'Write article',
-                //     'icon' => 'newspaper',
-                //     'url' => '/admin-master/writeArticle',
-                // ],
-                // [
-                //     'text' => 'See and edit articles',
-                //     'icon' => 'newspaper',
-                //     'url' => '/admin-master/personalArticles',
-                // ],
+                [
+                    'text' => 'All Articles',
+                    'icon' => 'newspaper',
+                    'url' => '/admin-master/articles/all',
+                ],
             ],
         ],
         [
             'text' => 'Contact',
             'icon' => 'mail-bulk',
             'url' => 'admin-master/contact',
+            'can' => 'admin',
         ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
             'icon' => 'user',
             'url'  => 'admin-master/profile',
+            'can' => 'member',
         ],
         [
             'text' => 'Manage users',
             'icon' => 'users',
             'url' => 'admin-master/users',
+            'can' => 'admin',
         ],
         // [
         //     'text' => 'Change Password',
