@@ -67,10 +67,10 @@
 @yield('adminlte_js')
 
 <script>
-    CKEDITOR.replace( 'editor1' );
+    CKEDITOR.replace( 'fullContent' );
 </script>
 <script>
-    CKEDITOR.replace( 'editor2' );
+    CKEDITOR.replace( 'previewContent' );
 </script>
 </body>
 </html>

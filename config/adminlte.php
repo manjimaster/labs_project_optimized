@@ -114,19 +114,19 @@ return [
             'icon' => 'file-alt',
         ],
         'ADMIN',
-        [
-            'text' => 'Blog',
-            'url'  => 'admin-master/blog',
-            'can' => 'admin',
-        ],
-        [
-            'text'        => 'Pages',
-            'url'         => 'admin-master/pages',
-            'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
-            'can' => 'admin',
-        ],
+        // [
+        //     'text' => 'Blog',
+        //     'url'  => 'admin-master/blog',
+        //     'can' => 'admin',
+        // ],
+        // [
+        //     'text'        => 'Pages',
+        //     'url'         => 'admin-master/pages',
+        //     'icon'        => 'file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        //     'can' => 'admin',
+        // ],
         // [
         //     'text'       => 'Important',
         //     'icon' => 'circle-notch',

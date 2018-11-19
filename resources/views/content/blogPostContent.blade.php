@@ -87,9 +87,10 @@
 				<div class="col-md-4 col-sm-5 sidebar">
 					<!-- Single widget -->
 					<div class="widget-item">
-						<form action="#" class="search-form">
-							<input type="text" placeholder="Search">
-							<button class="search-btn"><i class="flaticon-026-search"></i></button>
+						<form action="/search" method="post" class="search-form">
+							@csrf
+							<input name="search" type="text" placeholder="Search">
+							<button class="search-btn" type="submit"><i class="flaticon-026-search"></i></button>
 						</form>
 					</div>
 					<!-- Single widget -->
@@ -97,7 +98,13 @@
 						<h2 class="widget-title">Categories</h2>
 						<ul>
 							@foreach ($categoriesContent as $category)
-								<li><a href="#">{{$category->name}}</a></li>
+								<li>
+									<form action="/search" class="mb-0" method="post">
+										@csrf
+										<input type="hidden" name="search" value="{{$category->name}}">
+										<a onclick="event.target.parentElement.submit();" style="cursor: pointer;">{{$category->name}}</a>
+									</form>
+								</li>
 							@endforeach
 						</ul>
 					</div>
@@ -115,7 +122,13 @@
 						<h2 class="widget-title">Tags</h2>
 						<ul class="tag">
 							@foreach ($tagsContent as $tag)
-								<li><a href="#">{{$tag->name}}</a></li>
+							<li>
+								<form action="/search" class="mb-0" method="post">
+								@csrf
+								<input type="hidden" name="search" value="{{$tag->name}}">
+								<a onclick="event.target.parentElement.submit();" style="cursor: pointer"> {{$tag->name}}</a>
+								</form>  
+							</li>
 							@endforeach
 						</ul>
 					</div>
@@ -127,7 +140,7 @@
 							<p>
 								@foreach ($textsContent as $quote)
 									@if ($quote->uses == 'quote')
-										{{$quote->content}}
+										{{$quote->content_p1}}
 									@endif
 								@endforeach
 							</p>

@@ -32,12 +32,17 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 
 Route::get('/blogPost/{id}', 'BlogPostController@index')->name('blogPost');
 
+Route::post('/send', 'EmailController@send');
+
+Route::get('/results/{search}', 'BlogController@results');
+
+Route::post('/search', 'BlogController@search')->name('search');
 // Editor routes
 
 // All routes
 
 Route::middleware('can:member')->group(function () {
-    
+
     // Users
 
     Route::get('/admin-master/profile', 'AdminUserController@profileShow')->name('showProfile');

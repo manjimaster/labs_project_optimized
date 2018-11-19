@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Role;
+use App\Article;
+use App\Comment;
+use App\Tag;
+use App\Categorie;
 
 class HomeController extends Controller
 {
@@ -33,6 +37,17 @@ class HomeController extends Controller
         // // dd($users);
         // // dd($users[0]->roles[0]->name);
         // return view('home', compact('users'));
-        return view('home');
+        $articlesToValidate = Article::where('validation', 0)->count();
+        $commentsToValidate = Comment::where('validation', 0)->count();
+        $tagsToValidate = Tag::where('validation', 0)->count();
+        $categoriesToValidate = Categorie::where('validation', 0)->count();
+        // dd($articlesToValidate);
+        if (\Auth::user()->roles->name == 'admin') {
+            return view('home', compact('articlesToValidate', 'commentsToValidate', 'tagsToValidate', 'categoriesToValidate'));
+        }
+        else
+        {
+            return redirect()->route('showProfile');
+        }
     }
 }
