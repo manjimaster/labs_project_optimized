@@ -23,7 +23,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $contactData = Contact::find(1);
+        $contactData = Contact::getContacts(1);
         $linksContent = Link::all();
         $footerLink = $linksContent[1]->content;
         $textsContent = Text::all();
@@ -55,7 +55,7 @@ class BlogController extends Controller
 
         foreach ($allarticles as $article) {
         // NAME Search
-            if (preg_match('/\b' . $search . '\b/i', $article->name)) {
+            if (preg_match('/\b' . $search . '\b/i', $article->title)) {
                 if (!$results->contains($article)) {
                     $results->push($article);
                 }

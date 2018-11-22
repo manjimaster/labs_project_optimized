@@ -16,7 +16,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contactData = Contact::find(1);
+        $contactData = Contact::getContacts(1);
         $linksContent = Link::all();
         $footerLink = $linksContent[1]->content;
         $textsContent = Text::all();

@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -183,6 +183,11 @@ return [
          */
         Intervention\Image\ImageServiceProvider::class,
 
+        /*
+         * DebuBar
+         */
+        Barryvdh\Debugbar\ServiceProvider::class,
+
 
     ],
 
@@ -236,7 +241,12 @@ return [
         /*
          * Image Intervention
          */
-        'ImageIntervention' => Intervention\Image\Facades\Image::class
+        'ImageIntervention' => Intervention\Image\Facades\Image::class,
+
+        /*
+         * DebuBar
+         */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

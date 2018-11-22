@@ -32,7 +32,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="lab-card">
                         <div class="icon">
-                            <i class="{{$randomService->icons->class}}"></i>
+                            <i class="{{$randomService->class}}"></i>
                         </div>
                         <h2>{{$randomService->name}}</h2>
                         <p>{{$randomService->content}}</p>
@@ -130,14 +130,14 @@
                 </div>
                 <div class="owl-carousel" id="testimonial-slide">
                     @foreach ($testimonialsContent as $testimonial)
-                    {{-- {{dd($testimonial->testimonial_images->image_url_1)}} --}}
+                    {{-- {{dd($testimonial)}} --}}
                     <!-- single testimonial -->
                     <div class="testimonial">
                         <span>‘​‌‘​‌</span>
                         <p>{{$testimonial->content}}</p>
                         <div class="client-info">
                             <div class="avatar">
-                                <img src="/storage/images/modified/avatar/{{$testimonial->testimonial_images->image_url_1}}"
+                                <img src="/storage/images/modified/avatar/{{$testimonial->image_url_1}}"
                                     alt="">
                             </div>
                             <div class="client-name">
@@ -186,7 +186,7 @@
                     <div class="col-md-4 col-sm-6 mx-auto">
                         <div class="service">
                             <div class="icon">
-                                <i class="{{$service->icons->class}}"></i>
+                                <i class="{{$service->class}}"></i>
                             </div>
                             <div class="service-text">
                                 <h2>{{$service->name}}</h2>
@@ -270,17 +270,17 @@
                 @if ($key==1)
                     <div class="col-sm-4">
                         <div class="member">
-                            <img src="/storage/images/modified/team/{{$permanentTeamMember->users_images->image_url_1}}" alt="">
+                            <img src="/storage/images/modified/team/{{$permanentTeamMember->image_url_1}}" alt="">
                             <h2>{{$permanentTeamMember->firstName}} {{$permanentTeamMember->lastName}}</h2>
-                            <h3>{{$permanentTeamMember->positions->name}}</h3>
+                            <h3>{{$permanentTeamMember->name}}</h3>
                         </div>  
                     </div>
                 @endif
             <div class="col-sm-4">
                 <div class="member">
-                    <img src="/storage/images/modified/team/{{$randomUser->users_images->image_url_1}}" alt="">
+                    <img src="/storage/images/modified/team/{{$randomUser->image_url_1}}" alt="">
                     <h2>{{$randomUser->firstName}} {{$randomUser->lastName}}</h2>
-                    <h3>{{$randomUser->positions->name}}</h3>
+                    <h3>{{$randomUser->name}}</h3>
                 </div>
             </div>
             @endforeach

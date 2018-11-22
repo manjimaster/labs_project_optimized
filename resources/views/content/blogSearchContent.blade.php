@@ -36,17 +36,17 @@
 						@if ($results->onFirstPage())
 						{{-- <p class="disabled"><a href="#">&laquo;</a></p> --}}
 						@else
-							<a class="btn btn-labsGreen text-labsPurple" href="/results/design?page=1" rel="prev"  role="button">&laquo;</a>
+							<a class="btn btn-labsGreen text-labsPurple" href="/results/{{$search}}?page=1" rel="prev"  role="button">&laquo;</a>
 						@endif
 
 						@for ($i = 1; $i < $nbrArticlesPages+1; $i++)
 							@if ($results->currentPage() != $i)
-								<a class="btn btn-labsGreen text-labsPurple" href="/results/design?page={{$i}}"  role="button">{{$i}}</a>
+								<a class="btn btn-labsGreen text-labsPurple" href="/results/{{$search}}?page={{$i}}"  role="button">{{$i}}</a>
 							@endif
 						@endfor
 
 						@if ($results->hasMorePages())
-							<a class="btn btn-labsGreen text-labsPurple" href="/results/design?page={{$results->lastPage()}}" rel="next"  role="button">&raquo;</a>
+							<a class="btn btn-labsGreen text-labsPurple" href="/results/{{$search}}?page={{$results->lastPage()}}" rel="next"  role="button">&raquo;</a>
 						@else
 							{{-- <p class="disabled"><a href="#">&raquo;</a></p> --}}
 						@endif

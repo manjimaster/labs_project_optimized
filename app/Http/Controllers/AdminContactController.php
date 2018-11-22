@@ -9,12 +9,12 @@ class AdminContactController extends Controller
 {
     public function contactShow()
     {
-        $contact = Contact::find(1);
+        $contact = Contact::getContacts(1);
         return view('admin.contact', compact('contact'));
     }
     public function contactEdit()
     {
-        $contact = Contact::find(1);
+        $contact = Contact::getContacts(1);
         return view('admin.contactEdit', compact('contact'));
     }
     public function contactUpdate(Request $request)

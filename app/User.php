@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -55,5 +56,12 @@ class User extends Authenticatable
     public function articles()
     {
         return $this->hasMany('App\Article');
+    }
+    public static function getUsers()
+    {
+        return DB::table('users')
+            ->join('positions', 'users.positions_id', '=', 'positions.id')
+            ->join('users_images', 'users.users_images_id', '=', 'users_images.id')
+            ->select('firstName', 'lastName', 'permanentTeamMember', 'team', 'users_images.image_url_1', 'positions.name');
     }
 }

@@ -21,7 +21,7 @@ class BlogPostController extends Controller
      */
     public function index($id)
     {
-        $contactData = Contact::find(1);
+        $contactData = Contact::getContacts(1);
         $linksContent = Link::all();
         $footerLink = $linksContent[1]->content;
         $textsContent = Text::all();

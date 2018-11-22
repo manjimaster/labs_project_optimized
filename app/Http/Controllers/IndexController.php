@@ -25,22 +25,24 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $contactData = Contact::find(1);
-        $linksContent = Link::all();
+        // $test = Testimonial::getTestimonials();
+        // dd($test);
+        $contactData = Contact::getContacts(1);
+        $linksContent = Link::getLinks();
         $footerLink = $linksContent[1]->content;
-        $textsContent = Text::all();
-        $iconsContent = Icon::all();
-        $carouselContent = CarouselImage::all();
-        $testimonialsContent = Testimonial::all();
-        $servicesContent = Service::with('icons')->paginate(9);
+        $textsContent = Text::getTexts();
+        // $iconsContent = Icon::all();
+        $carouselContent = CarouselImage::getImages();
+        $testimonialsContent = Testimonial::getTestimonials();
+        // dd($testimonialsContent);
+        $servicesContent = Service::getServices()->paginate(9);
         $nbrServicesPages = $servicesContent->lastPage();
-        $randomServices = Service::all()->random(3);
-        $users = User::all();
-        $permanentTeamMember = User::where('permanentTeamMember', 1)->get()[0];
+        $randomServices = Service::getServices()->get()->random(3);
+        $permanentTeamMember = User::getUsers()->where('permanentTeamMember', 1)->get()[0];
         // dd($permanentTeamMember);
-        $teamUsers = User::where('team', 1)->where('permanentTeamMember', '0')->get();
+        $teamUsers = User::getUsers()->where('team', 1)->where('permanentTeamMember', '0')->get();
         $randomTeamUsers = $teamUsers->random(2);
-        return view ('index', compact('contactData', 'footerLink', 'textsContent', 'carouselContent', 'randomServices', 'servicesContent', 'nbrServicesPages', 'linksContent', 'testimonialsContent', 'randomTeamUsers', 'permanentTeamMember', 'users', 'iconsContent'));
+        return view ('index', compact('contactData', 'footerLink', 'textsContent', 'carouselContent', 'randomServices', 'servicesContent', 'nbrServicesPages', 'linksContent', 'testimonialsContent', 'randomTeamUsers', 'permanentTeamMember'));
     }
 
 
